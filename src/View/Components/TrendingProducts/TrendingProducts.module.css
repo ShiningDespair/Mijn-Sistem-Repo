@@ -1,1 +1,159 @@
-/* Styles for TrendingProducts component will be added here */
+/* Styles for TrendingProducts component */
+
+/* Product Tabs Customizations */
+.productTabsContainer {
+  /* No specific styles for .product-tabs container itself in style.css.old */
+}
+
+.navTabs { /* Applied to ul.nav-tabs */
+  justify-content: flex-end;
+  border: none;
+
+  /* These are Bootstrap variable overrides. They should work if this class is specific enough. */
+  --bs-nav-link-hover-color: #111;
+  --bs-nav-link-color: #555;
+  --bs-nav-tabs-link-border-color: #fff;
+  --bs-nav-tabs-link-hover-border-color: transparent;
+  --bs-nav-tabs-link-active-border-color: #fff; /* This seems to make the active border transparent if not for the rule below */
+}
+
+/* For the active tab link */
+/* This rule was originally: .product-tabs .nav-tabs .nav-link.active, .product-tabs .nav-tabs .nav-item.show .nav-link */
+/* We'll need to ensure the active nav-link gets this style. */
+/* It might be better to apply a specific class in JSX for the active link if Bootstrap's default 'active' class isn't enough */
+.navLinkActive {
+  border-bottom: 3px solid var(--accent-color) !important; /* Added !important to ensure override if needed */
+   /* border: none; was commented out in original */
+}
+
+/* Product Item Styles */
+.productItem {
+  position: relative;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #FBFBFB;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease-out;
+}
+
+.productItem:hover {
+  box-shadow: 0px 21px 44px rgba(0, 0, 0, 0.08);
+}
+
+.productItem h3 { /* Applies to h3 tags within productItem */
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #333333;
+  margin: 0;
+}
+
+.productItem figure { /* Applies to figure tags within productItem */
+  background: #F9F9F9;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem; /* Added some margin */
+}
+
+.productItem figure img { /* Applies to img tags within figure in productItem */
+  max-height: 210px;
+  height: auto;
+}
+
+.btnWishlist { /* For the wishlist button */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  transition: all 0.3s ease-out;
+  color: #222; /* Default color */
+}
+
+.btnWishlist:hover {
+  background: rgb(240, 56, 56);
+  color: #fff;
+  border-color: rgb(240,56,56); /* Ensure border color changes too */
+}
+
+.productDetails {
+  /* Container for qty, rating, price etc. if needed */
+}
+
+.qty { /* For text like "200GRM" */
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+}
+
+.rating { /* For the rating display */
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #222222;
+}
+
+.ratingIcon { /* For the iconify-icon within rating, if it's a separate element */
+  color: #FFC43F; /* Style for the icon itself */
+}
+
+.price {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #222222;
+}
+
+.productActions {
+  /* Container for cart button and quantity input if needed for layout */
+}
+
+.productQtyInputContainer { /* Was .product-item .product-qty */
+  width: 85px; /* This might be too small for typical Bootstrap input groups */
+  /* Consider making this more flexible or styling the input group directly */
+}
+
+.quantityInput { /* Was #quantity, converted to class */
+  height: auto;
+  width: 28px; /* This is very small for a number input */
+  text-align: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  /* Usually part of an input-group, Bootstrap handles styling */
+}
+
+.btnNumber { /* For + and - buttons for quantity */
+  width: 26px;
+  height: 26px;
+  line-height: 1;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  color: #222;
+  padding: 0;
+}
+
+/* Ensure product item links are styled if needed, .btn-link is global */
+.productItem .btnLink { /* if a .btn-link is specifically inside a product item */
+  text-decoration: none;
+}

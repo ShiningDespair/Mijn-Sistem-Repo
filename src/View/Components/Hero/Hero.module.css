@@ -1,1 +1,93 @@
-/* Styles for Hero component will be added here */
+.bannerBlocks {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+.block1 { grid-area: 1 / 1 / 3 / 8; } /* Renamed from .block-1 */
+.block2 { grid-area: 1 / 8 / 2 / 13; } /* Renamed from .block-2 */
+.block3 { grid-area: 2 / 8 / 3 / 13; } /* Renamed from .block-3 */
+
+@media screen and (max-width:1140px) {
+  .bannerBlocks {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .block1 { grid-area: 1 / 1 / 3 / 2; } /* Renamed from .block-1 */
+  .block2 { grid-area: 3 / 1 / 4 / 2; } /* Renamed from .block-2 */
+  .block3 { grid-area: 4 / 1 / 5 / 2; } /* Renamed from .block-3 */
+}
+
+/* banner ad */
+.bannerAd { /* Renamed from .banner-ad */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.bannerAd.blue { /* Targeting .banner-ad.blue */
+  background: #e6f3fb;
+}
+.bannerAd .swiperPagination { /* Renamed from .swiper-pagination */
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+.bannerAd .swiperPagination .swiperPaginationBullet { /* Renamed from .swiper-pagination-bullet */
+  width: 16px;
+  height: 16px;
+  margin: 4px;
+  background: #FFF;
+  opacity: 1;
+  transition: background 0.3s ease-out;
+}
+.bannerAd .swiperPagination .swiperPaginationBulletActive { /* Renamed from .swiper-pagination-bullet-active */
+  background: #FFC43F;
+}
+.bannerAd .swiperSlide { /* Renamed from .swiper-slide */
+  min-height: 630px;
+  display: flex;
+}
+.bannerAd .bannerContent .categories { /* Renamed from .categories */
+  font-family: 'Garamond';
+  font-size: 37px;
+  text-transform: capitalize;
+  color: var(--dark-color);
+}
+.bannerAd .bannerContent .sale { /* Renamed from .sale */
+  position: relative;
+  display: inline-block;
+}
+.bannerAd .bannerContent .sale:before {
+  content: '';
+  width: 80px;
+  border-bottom: 1px solid #111;
+  position: absolute;
+  bottom: 6px;
+}
+.bannerAd .bannerContent .sale:after {
+  content: 'SALE';
+  font-family: var(--body-font);
+  position: absolute;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #252525;
+  bottom: 0;
+  right: 0;
+}
+.bannerAd .bannerContent .bannerTitle { /* Renamed from .banner-title */
+  letter-spacing: 0.02em;
+  font-size: 33px;
+}
+.bannerAd.large .bannerContent .categories {
+  color: var(--accent-color);
+}
+.bannerAd.large .bannerContent .bannerTitle { /* Renamed from .banner-title */
+  font-size: 54px;
+}
+
+/* Styles for .main-swiper, if any, would go into a .mainSwiper class */
+.mainSwiper {
+    /* Add styles for mainSwiper here */
+}

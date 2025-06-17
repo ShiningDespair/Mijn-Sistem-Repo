@@ -4,14 +4,14 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <>
-      <footer className="py-5">
+      <footer className={`${styles.footer} py-5`}> {/* Updated to styles.footer and kept py-5 */}
         <div className="container-fluid">
           <div className="row">
 
             <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-menu">
+              <div className={styles.footerMenu}> {/* Updated to styles.footerMenu */}
                 <img src="images/mijnlogo.jpg" alt="logo" />
-                <div className="social-links mt-5">
+                <div className={`${styles.socialLinks} mt-5`}> {/* Updated to styles.socialLinks and kept mt-5 */}
                   <ul className="d-flex list-unstyled gap-2">
                     <li>
                       <a href="#" className="btn btn-outline-light">
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
 
             <div className="col-md-2 col-sm-6">
-              <div className="footer-menu">
+              <div className={styles.footerMenu}> {/* Updated to styles.footerMenu */}
                 <h5 className="widget-title">Kurumsal</h5>
                 <ul className="menu-list list-unstyled">
                   <li className="menu-item">
@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-2 col-sm-6">
-              <div className="footer-menu">
+              <div className={styles.footerMenu}> {/* Updated to styles.footerMenu */}
                 <h5 className="widget-title">Müşteri Hizmetleri</h5>
                 <ul className="menu-list list-unstyled">
                   <li className="menu-item">
@@ -91,7 +91,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-2 col-sm-6">
-              <div className="footer-menu">
+              <div className={styles.footerMenu}> {/* Updated to styles.footerMenu */}
                 <h5 className="widget-title">Hızlı Erişim</h5>
                 <ul className="menu-list list-unstyled">
                   <li className="menu-item">
@@ -113,7 +113,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="footer-menu">
+              <div className={styles.footerMenu}> {/* Updated to styles.footerMenu */}
                 <h5 className="widget-title">İndirimlerden Haberdar Olun!</h5>
                 <p>Bültenimiz sayesinde indirimleri ilk siz duyun.</p>
                 <form className="d-flex mt-3 gap-0" role="newsletter">
@@ -126,13 +126,13 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div id="footer-bottom">
+      <div id={styles.footerBottom}> {/* Updated to styles.footerBottom */}
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-6 copyright">
+            <div className={`${styles.copyright} col-md-6`}> {/* Updated to styles.copyright */}
               <p>© 2023 Duckheads Development. Tüm Hakları Saklıdır.</p>
             </div>
-            <div className="col-md-6 credit-link text-start text-md-end">
+            <div className={`${styles.creditLink} col-md-6 text-start text-md-end`}> {/* Updated to styles.creditLink */}
               <p> Desibona şirketinin alt üyesi olan Mijn Butik için özel olarak <a href="https://duckheadsdev.com">DuckHeads</a> tarafından yapılmıştır.</p>
             </div>
           </div>

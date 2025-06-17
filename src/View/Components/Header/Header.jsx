@@ -8,7 +8,7 @@ const Header = () => {
         <div className="row py-3 border-bottom">
 
           <div className="col-sm-4 col-lg-3 text-center text-sm-start">
-            <div className="main-logo">
+            <div className={styles.mainLogo}> {/* Updated to styles.mainLogo */}
               <a href="index.html">
                 <img src="images/mijnlogo.jpg" alt="logo" className="img-fluid" />
               </a>
@@ -16,7 +16,7 @@ const Header = () => {
           </div>
 
           <div className="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
-            <div className="search-bar row bg-light p-2 my-2 rounded-4">
+            <div className={`${styles.searchBar} row bg-light p-2 my-2 rounded-4`}> {/* Updated to styles.searchBar and kept Bootstrap classes */}
               <div className="col-md-4 d-none d-md-block">
                 <select className="form-select border-0 bg-transparent">
                   <option>Tüm Kategoriler</option>
@@ -37,7 +37,7 @@ const Header = () => {
           </div>
 
           <div className="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
-            <div className="support-box text-end d-none d-xl-block">
+            <div className={`${styles.supportBox} text-end d-none d-xl-block`}> {/* Updated to styles.supportBox */}
               <span className="fs-6 text-muted">Destek için</span>
               <h5 className="mb-0">+90-555555</h5>
             </div>
@@ -65,7 +65,7 @@ const Header = () => {
               </li>
             </ul>
 
-            <div className="cart text-end d-none d-lg-block dropdown">
+            <div className={`${styles.cart} text-end d-none d-lg-block dropdown`}> {/* Updated to styles.cart */}
               <button className="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
                 <span className="fs-6 text-muted dropdown-toggle">Sepet</span>
                 <span className="cart-total fs-5 fw-bold">25₺</span>
@@ -78,14 +78,14 @@ const Header = () => {
       <div className="container-fluid">
         <div className="row py-3">
           <div className="d-flex  justify-content-center justify-content-sm-between align-items-center">
-            <nav className="main-menu d-flex navbar navbar-expand-lg">
+            <nav className={`${styles.mainMenu} d-flex navbar navbar-expand-lg`}> {/* Updated to styles.mainMenu */}
 
               <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span className="navbar-toggler-icon"></span>
               </button>
 
-              <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div className={`${styles.offcanvasNavbar} offcanvas offcanvas-end`} tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel"> {/* Updated to styles.offcanvasNavbar */}
 
                 <div className="offcanvas-header justify-content-center">
                   <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -93,14 +93,14 @@ const Header = () => {
 
                 <div className="offcanvas-body">
 
-                  <select className="filter-categories border-0 mb-0 me-5">
+                  <select className={`${styles.filterCategories} filter-categories border-0 mb-0 me-5`}> {/* Updated to styles.filterCategories */}
                     <option>Kategoriler</option>
                     <option>Abiye</option>
                     <option>Eşofman Giyim</option>
                     <option>Üst Giyim</option>
                   </select>
 
-                  <ul className="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
+                  <ul className={`${styles.menuList} navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0`}> {/* Updated to styles.menuList */}
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Sayfalar</a>
                       <ul className="dropdown-menu" aria-labelledby="pages">

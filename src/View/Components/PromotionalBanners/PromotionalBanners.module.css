@@ -1,1 +1,18 @@
-/* Styles for PromotionalBanners component will be added here */
+/*
+Styles for the PromotionalBanners component.
+*/
+.bannerAd {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; /* Default border radius from original .banner-ad */
+  /* Bootstrap background, padding, etc., will be applied via global classes */
+}
+
+.bannerContent {
+  /* Styles for the content within the banner, if needed */
+  /* p-5 is currently applied directly in JSX, which is fine */
+}
+
+.bannerTitle {
+  /* Styles for h3.banner-title, if needed beyond global h3 */
+}

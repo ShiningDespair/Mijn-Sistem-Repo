@@ -1,1 +1,103 @@
-/* Styles for BlogSection component will be added here */
+/* Styles for the Blog Section, adapted from .brand-carousel in style.css.old */
+.blogItem { /* Renamed from .brand-item */
+  background: #FFFFFF;
+  border: 1px solid #FBFBFB;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 16px;
+  /* margin-bottom might be needed if swiper doesn't handle spacing */
+}
+
+.blogItem img { /* This will apply to img tags within .blogItem */
+  width: 100%;
+  border-radius: 12px;
+}
+
+.blogItemDetails { /* Renamed from .brand-details */
+  margin-left: 15px; /* This will apply if used, but current JSX doesn't have this structure */
+}
+
+.blogItemTitle { /* Renamed from .brand-title */
+  margin: 0;
+  /* Note: Original JSX uses h3 for title, and product-item h3 styles might be more relevant.
+     This class is from .brand-title. If visual discrepancies, check product-item h3 styles.
+     For now, sticking to direct .brand-title conversion.
+     The JSX for BlogSection currently uses <h3 className="post-title">. This will need to be reconciled.
+     Let's assume for now the intention is to style the card itself, and title styling will be handled by global h3 or specific post-title if defined elsewhere.
+     If .brand-title styles are desired for the post title, the JSX needs to use this class.
+     Given the current JSX, this .blogItemTitle might not be directly used unless JSX is changed.
+     The extracted HTML for BlogSection has post-item structure, not brand-item directly for the text content.
+     Let's keep .blogItem for the card, and assume title/meta are handled by .post-item rules (which are also in style.css.old).
+     The .brand-carousel in HTML was mainly for the swiper container. The items are .post-item.
+  */
+}
+
+/*
+  Important consideration: The BlogSection.jsx uses a structure like:
+  <div className="swiper-slide brand-item"> (in the original HTML, now just swiper-slide)
+    <article className="post-item">
+      <img />
+      <div className="post-content">
+        <h3 className="post-title">...</h3>
+        <div className="post-meta">...</div>
+      </div>
+    </article>
+  </div>
+
+  The .brand-item styles from style.css.old are:
+  .brand-carousel .brand-item { padding: 16px; ... }
+  .brand-carousel .brand-item img { width: 100%; border-radius: 12px; }
+
+  The .post-item styles are:
+  .post-item .post-meta { font-size: 0.8rem; line-height: 1; }
+  .post-item .post-meta svg { margin-right: 5px; }
+
+  So, .blogItem will correspond to the original .brand-item (the slide's direct child if we make <article> the .blogItem).
+  Or, if the <article className="post-item"> is the primary styled box, then we should map post-item styles.
+
+  Let's map .brand-item to a wrapper style if needed, and focus on .post-item for content.
+  The HTML extraction put .brand-carousel swiper with .swiper-slide containing article.post-item.
+  So, the styles for .brand-item (padding, etc.) should apply to the <article> or a div wrapping it.
+
+  Let's adjust: .blogPostItem for the <article className="post-item">
+*/
+
+.blogPostItem { /* mapped from .post-item, but taking .brand-item's padding/bg/shadow */
+  background: #FFFFFF;
+  border: 1px solid #FBFBFB;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 16px; /* from .brand-item */
+  margin-bottom: 20px; /* Added for spacing between items if not in a carousel row */
+}
+
+.blogPostItem img { /* from .brand-item img and general good practice */
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px; /* Added spacing */
+}
+
+.postContent {
+  /* No specific .post-content styles in style.css.old, but good to have a class */
+}
+
+.postTitle {
+  /* Using global h3 styles by default. If .brand-title specific styles were intended:
+  font-weight: 600; // Example, adjust if needed
+  font-size: 18px; // Example
+  line-height: 25px; // Example
+  text-transform: capitalize; // Example
+  color: #333333; // Example
+  margin: 0; // from .brand-title
+  */
+}
+
+.postMeta { /* from .post-item .post-meta */
+  font-size: 0.8rem;
+  line-height: 1;
+  /* color: #9D9D9D; /* Example, if needed */
+}
+
+.postMeta svg { /* from .post-item .post-meta svg */
+  margin-right: 5px;
+}

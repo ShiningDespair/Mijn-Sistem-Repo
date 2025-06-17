@@ -21,8 +21,8 @@ const TrendingProducts = () => {
               <div className="tabs-header d-flex justify-content-between border-bottom my-5">
                 <h3>Trend Ürünler</h3>
                 <nav>
-                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a href="#" className="nav-link text-uppercase fs-6 active" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all">Tümü</a>
+                  <div className={`nav nav-tabs ${styles.navTabs}`} id="nav-tab" role="tablist">
+                    <a href="#" className={`nav-link text-uppercase fs-6 active ${styles.navLinkActive}`} id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all">Tümü</a>
                     <a href="#" className="nav-link text-uppercase fs-6" id="nav-fruits-tab" data-bs-toggle="tab" data-bs-target="#nav-fruits">Abiye</a>
                     <a href="#" className="nav-link text-uppercase fs-6" id="nav-juices-tab" data-bs-toggle="tab" data-bs-target="#nav-juices">Takım</a>
                   </div>
@@ -34,27 +34,27 @@ const TrendingProducts = () => {
                   <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 
                     <div className="col">
-                      <div className="product-item">
+                      <div className={styles.productItem}>
                         <span className="badge bg-success position-absolute m-3">-30%</span>
-                        <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                        <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
                         <figure>
                           <a href="index.html" title="Product Title">
                             <img src="images/crop-to-fit.jpeg"  className="tab-image" />
                           </a>
                         </figure>
                         <h3>Krem Oversize Takım</h3>
-                        <span className="qty">27 Değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                        <span className="price">TL2000</span>
+                        <span className={styles.qty}>27 Değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                        <span className={styles.price}>TL2000</span>
                         <div className="d-flex align-items-center justify-content-between">
-                          <div className="input-group product-qty">
+                          <div className={`input-group ${styles.productQtyInputContainer}`}>
                               <span className="input-group-btn">
-                                  <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                  <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
                                     <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
                                   </button>
                               </span>
-                              <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
+                              <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
                               <span className="input-group-btn">
-                                  <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                  <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
                                       <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
                                   </button>
                               </span>
@@ -65,27 +65,27 @@ const TrendingProducts = () => {
                     </div>
 
                     <div className="col">
-                      <div className="product-item">
+                      <div className={styles.productItem}>
                         <span className="badge bg-success position-absolute m-3">-30%</span>
-                        <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                        <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
                         <figure>
                           <a href="index.html" title="Product Title">
                             <img src="images/crop-to-fit (1).jpeg"  className="tab-image" />
                           </a>
                         </figure>
                         <h3>Kırmızı Meri Elbise</h3>
-                        <span className="qty">34 Değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                        <span className="price">TL1500</span>
+                        <span className={styles.qty}>34 Değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                        <span className={styles.price}>TL1500</span>
                         <div className="d-flex align-items-center justify-content-between">
-                          <div className="input-group product-qty">
+                          <div className={`input-group ${styles.productQtyInputContainer}`}>
                               <span className="input-group-btn">
-                                  <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                                  <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
                                     <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
                                   </button>
                               </span>
-                              <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
+                              <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
                               <span className="input-group-btn">
-                                  <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                                  <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
                                       <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
                                   </button>
                               </span>
@@ -95,7 +95,7 @@ const TrendingProducts = () => {
                       </div>
                     </div>
 
-                    {/* Add the rest of the product items here, ensuring to replace class with className and handle iconify-icon elements */}
+                    {/* Add the rest of the product items here, ensuring to replace class with className and handle iconify-icon elements, applying styles.productItem, styles.btnWishlist, styles.qty, styles.rating, styles.price, styles.productQtyInputContainer, styles.btnNumber, and styles.quantityInput as shown above. */}
 
                   </div>
                   {/* / product-grid */}

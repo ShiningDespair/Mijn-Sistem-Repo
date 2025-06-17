@@ -27,41 +27,41 @@ const CategoryCarousel = () => {
 
             <div className="category-carousel swiper">
               <div className="swiper-wrapper">
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/female-clothes_4060744 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Yeniler</h3>
+                  <h3 className={styles.categoryTitle}>Yeniler</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/female-clothes_4060744 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Çok Satanlar</h3>
+                  <h3 className={styles.categoryTitle}>Çok Satanlar</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/woman-clothes_4060444 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Abiye</h3>
+                  <h3 className={styles.categoryTitle}>Abiye</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/female-clothes_4060744 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Eşofman Takımı</h3>
+                  <h3 className={styles.categoryTitle}>Eşofman Takımı</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/woman-clothes_4060480 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Üst Giyim</h3>
+                  <h3 className={styles.categoryTitle}>Üst Giyim</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/female-clothes_4060744 (1).png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Alt Giyim</h3>
+                  <h3 className={styles.categoryTitle}>Alt Giyim</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/icon-animal-products-drumsticks.png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Dış Giyim</h3>
+                  <h3 className={styles.categoryTitle}>Dış Giyim</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/icon-bread-herb-flour.png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Aksesuar</h3>
+                  <h3 className={styles.categoryTitle}>Aksesuar</h3>
                 </a>
-                <a href="index.html" className="nav-link category-item swiper-slide">
+                <a href="index.html" className={`nav-link ${styles.categoryCarouselItem} swiper-slide`}>
                   <img src="images/icon-vegetables-broccoli.png" alt="Category Thumbnail" />
-                  <h3 className="category-title">Takım</h3>
+                  <h3 className={styles.categoryTitle}>Takım</h3>
                 </a>
               </div>
             </div>

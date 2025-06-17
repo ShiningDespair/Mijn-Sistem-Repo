@@ -1,1 +1,36 @@
-/* Styles for Header component will be added here */
+/* No specific styles for Header component found in style.css.old */
+/* You can add component-specific styles here if needed. */
+
+/* General Header styles that might be relevant */
+.mainLogo img { /* Assuming .main-logo is a class in Header.jsx */
+    max-width: 100%; /* Example style */
+}
+
+.searchBar { /* Assuming .search-bar is a class in Header.jsx */
+    /* Add search bar specific styles */
+}
+
+.mainMenu { /* Assuming .main-menu is a class in Header.jsx */
+    /* Add main menu specific styles */
+}
+
+/* Styles for offcanvas navigation (if controlled by Header) */
+.offcanvasNavbar {
+    /* Add offcanvas navbar specific styles */
+}
+
+.filterCategories {
+    /* Add filter categories specific styles */
+}
+
+.menuList {
+    /* Add menu list specific styles */
+}
+
+.cart {
+    /* Add cart specific styles */
+}
+
+.supportBox {
+    /* Add support box specific styles */
+}

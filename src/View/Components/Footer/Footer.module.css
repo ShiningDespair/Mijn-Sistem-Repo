@@ -1,1 +1,31 @@
-/* Styles for Footer component will be added here */
+/* Styles for Footer component */
+
+/* Example: Styles for .footerMenu */
+.footerMenu {
+  /* Add styles for footer-menu class here */
+}
+
+/* Example: Styles for .socialLinks */
+.socialLinks {
+  /* Add styles for social-links class here */
+}
+
+/* Example: Styles for .copyright */
+.copyright {
+  /* Add styles for copyright class here */
+}
+
+/* Example: Styles for .creditLink */
+.creditLink {
+  /* Add styles for credit-link class here */
+}
+
+/* Styles for footer HTML tag, if needed for specificity within the component */
+.footer {
+  /* Add styles for footer tag here */
+}
+
+/* Styles for #footer-bottom ID, if needed for specificity within the component */
+.footerBottom {
+  /* Add styles for footer-bottom ID here */
+}
