@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Sistem: Stratejik Pazar ve Teknoloji Analizi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Color Palette Name: Brilliant Blues 
+    #004AAD (Primary Dark)
+    #0062CC (Primary)
+    #007BFF (Accent)
+    #4DA3FF (Light)
+    #99C7FF (Extra Light)
+    #F8F9FA (Background)
+    #212529 (Text Dark)
+    #495057 (Text Light)
+    -->
+    <!-- 
+    Narrative Plan:
+    1.  Introduction: Hook with the core problem (slow/costly e-commerce) and the solution (Mijn Sistem).
+    2.  Market Opportunity: Visualize speed and cost benefits.
+    3.  Core Architecture: Explain the multi-site template system with a flow chart.
+    4.  Technology Stack: Detail the technologies used in a clean, organized way.
+    5.  Key Features: Showcase the main benefits like centralized analytics.
+    6.  Performance & Security: Highlight the commitment to speed and safety using data from the SRS.
+    7.  Project Roadmap (MoSCoW): Present the development priorities clearly.
+    8.  Conclusion: A final callout summarizing the value proposition.
+    -->
+    <!-- 
+    Visualization Choices (NO SVG, NO MERMAID JS):
+    -   Pazar Fırsatı (Pazara Çıkış Süresi): Goal: Change -> Visualization: Line Chart -> Justification: Shows the dramatic reduction in development time over multiple projects. -> Library: Chart.js (Canvas).
+    -   Merkezi Analitik Panel (Örnek Site Performansı): Goal: Compare -> Visualization: Bar Chart -> Justification: Compares key performance indicators across different sites, demonstrating a core feature. -> Library: Chart.js (Canvas).
+    -   Sistem Mimarisi (Akış Şeması): Goal: Organize -> Visualization: Flow Chart -> Justification: Explains the process of creating a new site from the core system. -> Method: HTML/CSS with Tailwind (Flexbox & Borders), NO SVG.
+    -   Proje Öncelikleri (MoSCoW): Goal: Organize -> Visualization: Table -> Justification: Clearly and formally presents the prioritization from the SRS. -> Method: Styled HTML Table with Tailwind, NO SVG.
+    -   Performans Hedefleri: Goal: Inform -> Visualization: Single Big Numbers -> Justification: Highlights key non-functional requirements in a highly digestible format. -> Method: HTML/CSS with Tailwind, NO SVG.
+    -   Güvenlik Yaklaşımı (OWASP): Goal: Organize -> Visualization: Icon List -> Justification: Represents a commitment to security standards in a visually appealing way. -> Method: HTML/CSS with Unicode Icons, NO SVG.
+    -   Teknoloji Yığını: Goal: Organize -> Visualization: Grouped List/Cards -> Justification: Organizes the tech stack into logical categories for easy understanding. -> Method: HTML/CSS with Tailwind, NO SVG.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #212529;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-line::after {
+            content: '→';
+            font-size: 2rem;
+            color: #007BFF;
+            margin: 0 1rem;
+        }
+        .flow-line:last-child::after {
+            content: '';
+        }
+        .flow-line-vertical {
+            content: '↓';
+            font-size: 2rem;
+            color: #007BFF;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#004AAD]">Mijn Sistem: Stratejik Analiz</h1>
+            <p class="mt-4 text-lg text-[#495057] max-w-3xl mx-auto">Yeniden kullanılabilir mimari ile e-ticaret operasyonlarını hızlandırma ve merkezileştirme vizyonu.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="opportunity">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Pazar Fırsatı: Hız ve Verimlilik</h2>
+                    <p class="text-[#495057] mb-6">Geleneksel e-ticaret projeleri aylar süren geliştirme süreçleri ve yüksek maliyetler gerektirir. "Mijn Sistem", bu süreyi haftalara, hatta günlere indirerek pazara giriş hızını radikal bir şekilde artırır ve operasyonel maliyetleri düşürür.</p>
+                    <div class="chart-container mx-auto">
+                        <canvas id="timeToMarketChart"></canvas>
+                    </div>
+                     <p class="text-center text-sm text-gray-500 mt-4">Bu grafik, "Mijn Sistem" altyapısının sonraki projelerde pazara çıkış süresini nasıl dramatik bir şekilde düşürdüğünü göstermektedir. İlk proje altyapı kurulumunu içerirken, sonraki siteler mevcut bileşenleri kullanarak çok daha hızlı bir şekilde hayata geçirilir.</p>
+                </div>
+            </section>
+            
+            <section id="architecture">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Sistem Mimarisi: Akıllı Şablon Yapısı</h2>
+                    <p class="text-[#495057] mb-8 text-center">Mijn Sistem, tek bir çekirdekten beslenen, ancak her biri kendine özgü bir kimliğe sahip e-ticaret siteleri oluşturmayı sağlayan bir platformdur. Aşağıdaki akış, yeni bir sitenin nasıl hayata geçirildiğini göstermektedir.</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center text-center space-y-4 md:space-y-0">
+                        <div class="flow-line flex flex-col md:flex-row items-center">
+                            <div class="p-4 bg-blue-100 border-2 border-[#007BFF] rounded-lg">
+                                <h3 class="font-bold text-[#004AAD]">1. Çekirdek Sistem</h3>
+                                <p class="text-sm">Yeniden kullanılabilir<br>React bileşenleri</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block flow-line-vertical md:hidden"></div>
+                        <div class="flow-line flex flex-col md:flex-row items-center">
+                            <div class="p-4 bg-blue-100 border-2 border-[#007BFF] rounded-lg">
+                                <h3 class="font-bold text-[#004AAD]">2. Merkezi Panel</h3>
+                                <p class="text-sm">Yönetici "Yeni Site Ekle"<br>işlemini başlatır.</p>
+                            </div>
+                        </div>
+                         <div class="hidden md:block flow-line-vertical md:hidden"></div>
+                        <div class="flow-line flex flex-col md:flex-row items-center">
+                            <div class="p-4 bg-green-100 border-2 border-green-500 rounded-lg">
+                                <h3 class="font-bold text-green-800">3. Yeni Site Oluşturuldu</h3>
+                                <p class="text-sm">Örn: "Mijn Butik"<br>Özgün konfigürasyon ile</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="features">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">Merkezi Analitik Panel</h3>
+                        <p class="text-[#495057] mb-6">Tüm sitelerin performansını tek bir ekrandan karşılaştırın. "Mijn Yapı" ve "Mijn Butik" arasındaki satış ve ziyaretçi verileri gibi metrikler, stratejik kararlar almanızı kolaylaştırır.</p>
+                        <div class="chart-container h-64 sm:h-80">
+                            <canvas id="sitePerformanceChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">Bu örnek grafik, merkezi panelin farklı sitelerin kilit performans göstergelerini (KPI) nasıl yan yana göstererek anlık karşılaştırma imkanı sunduğunu temsil etmektedir.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col">
+                         <h3 class="text-2xl font-bold text-[#004AAD] mb-4">Teknoloji Yığını</h3>
+                         <p class="text-[#495057] mb-6">Proje, güvenilirlik, ölçeklenebilirlik ve yüksek performans sağlamak üzere modern ve endüstri standardı teknolojilerle inşa edilmiştir.</p>
+                         <div class="flex-grow space-y-4">
+                             <div>
+                                 <h4 class="font-bold text-[#0062CC]">Frontend</h4>
+                                 <p class="text-sm text-[#495057]">Vite.js, React.js, D3.js, Formik, Tailwind CSS</p>
+                             </div>
+                             <div>
+                                 <h4 class="font-bold text-[#0062CC]">Backend</h4>
+                                 <p class="text-sm text-[#495057]">ASP.NET Core, Entity Framework Core, LINQ</p>
+                             </div>
+                             <div>
+                                 <h4 class="font-bold text-[#0062CC]">Veritabanı</h4>
+                                 <p class="text-sm text-[#495057]">MySQL (Azure Database for MySQL)</p>
+                             </div>
+                             <div>
+                                 <h4 class="font-bold text-[#0062CC]">Barındırma & Altyapı</h4>
+                                 <p class="text-sm text-[#495057]">Azure (App Service, Functions, Cache), Veridyen</p>
+                             </div>
+                             <div>
+                                 <h4 class="font-bold text-[#0062CC]">Ödeme Altyapısı</h4>
+                                 <p class="text-sm text-[#495057]">Iyzico API Entegrasyonu</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quality">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center">
+                        <h3 class="text-2xl font-bold text-[#004AAD] mb-4">Sarsılmaz Performans Hedefleri</h3>
+                        <p class="text-[#495057] mb-6">Kullanıcı deneyimi ve arama motoru optimizasyonu için hız kritik öneme sahiptir. Sistem, endüstri standartlarının ötesinde performans hedefleriyle tasarlancaktır.</p>
+                        <div class="flex justify-around items-center">
+                            <div class="px-4">
+                                <p class="text-4xl md:text-5xl font-extrabold text-[#007BFF]">&lt;2.5s</p>
+                                <p class="font-semibold text-[#004AAD]">En Büyük İçerikli Boyama (LCP)</p>
+                            </div>
+                            <div class="px-4">
+                                <p class="text-4xl md:text-5xl font-extrabold text-[#007BFF]">&lt;200ms</p>
+                                <p class="font-semibold text-[#004AAD]">Sunucu İlk Bayt Süresi (TTFB)</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                         <h3 class="text-2xl font-bold text-[#004AAD] mb-4">Tasarımda Güvenlik (Security by Design)</h3>
+                         <p class="text-[#495057] mb-6">Sistem, en başından itibaren OWASP Top 10 güvenlik risklerini azaltacak şekilde tasarlancaktır. Bu proaktif yaklaşım, veri ve müşteri güvenliğini en üst düzeyde tutar.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔️</span> Bozuk Erişim Kontrolü (Multi-Tenant)</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔️</span> Kriptografik Hatalara Karşı Koruma</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔️</span> Enjeksiyon Saldırılarını Önleme (EF Core)</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✔️</span> Güvenli Oturum ve Kimlik Doğrulama</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="roadmap">
+                 <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-2">Proje Yol Haritası: MoSCoW Önceliklendirmesi</h2>
+                    <p class="text-[#495057] mb-6">Geliştirme süreci, en yüksek iş değerini en kısa sürede sunmaya odaklanmıştır. MoSCoW metodolojisi, özelliklerin önem sırasını net bir şekilde belirler.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="p-4 bg-[#004AAD] text-white font-bold rounded-tl-lg">Öncelik</th>
+                                    <th class="p-4 bg-[#004AAD] text-white font-bold">Özellik</th>
+                                    <th class="p-4 bg-[#004AAD] text-white font-bold rounded-tr-lg">Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-4 font-semibold text-red-600">Must Have</td>
+                                    <td class="p-4">Temel E-ticaret Akışı</td>
+                                    <td class="p-4 text-sm text-[#495057]">Ürün yönetimi, sepet, sipariş ve Iyzico ile ödeme.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="p-4 font-semibold text-red-600">Must Have</td>
+                                    <td class="p-4">Merkezi Site Yönetimi</td>
+                                    <td class="p-4 text-sm text-[#495057]">Panelden site seçimi ve o siteye özel içerik yönetimi.</td>
+                                </tr>
+                                 <tr class="border-b border-gray-200">
+                                    <td class="p-4 font-semibold text-yellow-600">Should Have</td>
+                                    <td class="p-4">Analitik Dashboard'lar</td>
+                                    <td class="p-4 text-sm text-[#495057]">Konsolide ve site bazında performans metrikleri.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <td class="p-4 font-semibold text-blue-600">Could Have</td>
+                                    <td class="p-4">Bileşen Sürüm Yönetimi</td>
+                                    <td class="p-4 text-sm text-[#495057]">Kritik modüllerin aşamalı olarak güncellenmesi.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-semibold text-gray-500">Won't Have</td>
+                                    <td class="p-4">Çoklu Dil/Para Birimi</td>
+                                    <td class="p-4 text-sm text-[#495057]">Bu sürümde yalnızca Türkçe ve TRY desteklenecektir.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-200">
+            <p class="text-lg font-semibold text-[#004AAD]">Mijn Sistem</p>
+            <p class="text-sm text-gray-500">Dijital Ticarette Verimlilik ve Ölçeklenebilirlik Yeniden Tanımlanıyor.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const brilliantBlues = {
+            primaryDark: '#004AAD',
+            primary: '#0062CC',
+            accent: '#007BFF',
+            light: '#4DA3FF',
+            extraLight: '#99C7FF',
+        };
+
+        const timeToMarketCtx = document.getElementById('timeToMarketChart').getContext('2d');
+        new Chart(timeToMarketCtx, {
+            type: 'line',
+            data: {
+                labels: ['Proje 1 (Mijn Yapı)', 'Proje 2 (Mijn Butik)', 'Proje 3 (Yeni Site)'],
+                datasets: [{
+                    label: 'Pazara Çıkış Süresi (Gün)',
+                    data: [30, 15, 7],
+                    borderColor: brilliantBlues.accent,
+                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                    fill: true,
+                    tension: 0.1,
+                    pointBackgroundColor: brilliantBlues.primaryDark,
+                    pointRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Geliştirme Süresi (Gün)'
+                        }
+                    }
+                }
+            }
+        });
+
+        const sitePerformanceCtx = document.getElementById('sitePerformanceChart').getContext('2d');
+        const sitePerformanceLabels = ['Aylık Ciro (Bin ₺)', 'Günlük Ziyaretçi', wrapLabel('Ortalama Sepet Tutarı (₺)')];
+
+        new Chart(sitePerformanceCtx, {
+            type: 'bar',
+            data: {
+                labels: sitePerformanceLabels,
+                datasets: [{
+                    label: 'Mijn Yapı',
+                    data: [150, 2200, 450],
+                    backgroundColor: brilliantBlues.primary,
+                    borderColor: brilliantBlues.primaryDark,
+                    borderWidth: 1
+                }, {
+                    label: 'Mijn Butik',
+                    data: [85, 4500, 280],
+                    backgroundColor: brilliantBlues.light,
+                    borderColor: brilliantBlues.primary,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Değer'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
