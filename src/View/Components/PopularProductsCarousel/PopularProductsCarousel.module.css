@@ -1,1 +1,147 @@
-/* Styles for PopularProductsCarousel component will be added here */
+/* Styles for PopularProductsCarousel component */
+
+/* No specific styles found for a ".products-carousel" container in style.css.old */
+/* Styling for the product items is identical to TrendingProducts and BestSellersCarousel. */
+/* Duplicating product item styles here to make the component self-contained for now. */
+/* A shared ProductItem.module.css or global product item styles would be a better long-term solution. */
+
+.productItem {
+  position: relative;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #FBFBFB;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  margin-bottom: 30px; /* Swiper might handle spacing, adjust if necessary */
+  transition: box-shadow 0.3s ease-out;
+}
+
+.productItem:hover {
+  box-shadow: 0px 21px 44px rgba(0, 0, 0, 0.08);
+}
+
+/* Applies to h3 tags within productItem */
+.productItem h3 {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #333333;
+  margin: 0;
+}
+
+/* Applies to figure tags within productItem */
+.productItem figure {
+  background: #F9F9F9;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Applies to img tags within figure in productItem */
+.productItem figure img {
+  max-height: 210px;
+  height: auto;
+}
+
+.btnWishlist { /* For the wishlist button */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  transition: all 0.3s ease-out;
+  color: #222;
+}
+
+.btnWishlist:hover {
+  background: rgb(240, 56, 56);
+  color: #fff;
+  border-color: rgb(240,56,56);
+}
+
+.productDetails {
+  /* Container for qty, rating, price etc. if needed */
+}
+
+.qty { /* For text like "200GRM" or "X Değerlendirme" */
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+}
+
+.rating { /* For the rating display */
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #222222;
+}
+
+.ratingIcon { /* For the iconify-icon within rating */
+  color: #FFC43F;
+}
+
+.price {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #222222;
+}
+
+.productActions {
+  /* Container for cart button and quantity input if needed for layout */
+}
+
+.productQtyInputContainer {
+  width: 85px;
+}
+
+.quantityInput { /* Was #quantity, converted to class */
+  height: auto;
+  width: 28px;
+  text-align: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+.btnNumber { /* For + and - buttons for quantity */
+  width: 26px;
+  height: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  color: #222;
+  padding: 0;
+}
+
+.btnNumber svg {
+  width: 1em;
+  height: 1em;
+}
+
+.productsCarouselPrev, .productsCarouselNext {
+    /* Placeholder for specific button styles if .products-carousel had them */
+    /* Uses global .swiper-prev, .swiper-next for now */
+}

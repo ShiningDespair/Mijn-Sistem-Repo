@@ -1,1 +1,32 @@
-/* Styles for MobileAppPromotion component will be added here */
+/* Styles for MobileAppPromotion component */
+
+.imageFloat {
+  margin-top: -140px;
+  margin-bottom: -140px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media screen and (max-width: 991px) {
+  .imageFloat {
+    margin-top: 0; /* Reset margins for smaller screens */
+    margin-bottom: 20px; /* Add some margin below the image on smaller screens */
+  }
+}
+
+/* Placeholder for other specific styles if needed in the future */
+.contentWrapper {
+  /* If the text content needed a specific wrapper style */
+}
+
+.title {
+  /* If the h2 title needed specific styles */
+}
+
+.description {
+  /* If the paragraph needed specific styles */
+}
+
+.appButtons a {
+  /* If the app store buttons (<a> tags) needed specific styles beyond Bootstrap .btn */
+  /* For example, specific margins or widths */
+}

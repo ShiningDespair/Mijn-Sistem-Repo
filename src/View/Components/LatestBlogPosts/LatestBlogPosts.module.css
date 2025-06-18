@@ -1,1 +1,72 @@
-/* Styles for LatestBlogPosts component will be added here */
+/* Styles for LatestBlogPosts component */
+
+.latestBlogSection {
+  /* For section#latest-blog if specific styles were needed */
+  /* py-5 is used in JSX, so padding is handled by Bootstrap */
+}
+
+.postItem {
+  background: #FFFFFF; /* Assuming a white card background */
+  border: 1px solid #FBFBFB; /* Light border */
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04); /* Subtle shadow */
+  border-radius: 16px; /* Rounded corners */
+  margin-bottom: 30px; /* Spacing between items */
+  overflow: hidden; /* To contain zoom effect and ensure border-radius applies to images */
+}
+
+.imageHolder { /* Was .post-image in original HTML idea */
+  overflow: hidden; /* For zoom effect */
+  position: relative; /* For potential absolute positioned elements inside */
+}
+
+.imageHolder img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease; /* For zoom effect */
+}
+
+.zoomEffect img:hover { /* Applying zoom to image inside .zoomEffect or .imageHolder */
+  transform: scale(1.1);
+}
+
+.postContent {
+  padding: 20px; /* Padding for content within the card */
+}
+
+.postHeader {
+  margin-bottom: 10px; /* Space below header (meta + title) */
+}
+
+.postMeta {
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #9D9D9D; /* Matching typical meta text color */
+  margin-bottom: 8px; /* Space below meta */
+}
+
+.postMeta svg { /* For icons in meta */
+  margin-right: 5px;
+  vertical-align: middle; /* Align icons better with text */
+}
+
+.postMetaItem { /* For individual items within post-meta like date or author */
+  margin-right: 15px;
+}
+
+.postTitle {
+  font-family: var(--heading-font); /* Ensure heading font */
+  color: var(--dark-color); /* Ensure heading color */
+  font-weight: 700; /* Standard heading weight */
+  font-size: 1.25rem; /* Example size, adjust as needed for h5 */
+  margin-bottom: 0; /* Remove default margin if part of post-header */
+}
+
+.postTitle a {
+  color: inherit; /* Make title link inherit color */
+  text-decoration: none;
+}
+
+.postTitle a:hover {
+  color: var(--accent-color); /* Title link hover color */
+}

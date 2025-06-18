@@ -1,1 +1,24 @@
-/* Styles for PopularTags component will be added here */
+/*
+The Popular Tags section (src/View/Components/PopularTags/PopularTags.jsx)
+is styled using Bootstrap utility classes for the overall section padding and
+Bootstrap button classes (btn, btn-warning, me-2, mb-2) for the tags themselves.
+
+The .btn-warning styles are custom defined globally in the theme (e.g., in global.css)
+and are not specific to this component instance.
+
+No specific custom CSS rules unique to this component's structure or its tags
+were found in style.css.old that would require being extracted into this module.
+
+This file is kept for structural consistency. If component-specific layout or
+tag styling adjustments are needed in the future (beyond global .btn-warning),
+they can be added here.
+*/
+
+.tagsContainer {
+    /* Example: If the div holding all tags needed specific layout styles */
+}
+
+.tagItem {
+    /* Example: If individual <a> tags needed styles beyond .btn and .btn-warning */
+    /* For now, Bootstrap and global .btn-warning handle this. */
+}

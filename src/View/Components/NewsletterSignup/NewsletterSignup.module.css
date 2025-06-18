@@ -1,1 +1,27 @@
-/* Styles for NewsletterSignup component will be added here */
+/*
+The Newsletter Signup section (src/View/Components/NewsletterSignup/NewsletterSignup.jsx)
+is primarily styled using Bootstrap utility classes (e.g., bg-secondary, py-5, text-white, form-control, btn, btn-primary)
+and global theme styles defined for typography and form elements.
+
+No specific custom CSS rules unique to this component were found in style.css.old
+that would require being extracted into this module.
+
+This file is kept for structural consistency. If component-specific styles
+are needed in the future, they can be added here.
+*/
+
+.newsletterFormWrapper {
+    /* Example: If a wrapper inside needed specific styles */
+}
+
+.formTitle {
+    /* Example: If the h2 title needed specific styles beyond global h2 */
+}
+
+.formInput {
+    /* Example: If the input.form-control needed further customization beyond global form-control */
+}
+
+.submitButton {
+    /* Example: If the button.btn.btn-primary needed further customization beyond global button styles */
+}

@@ -10,7 +10,7 @@ const MobileAppPromotion = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-4">
-                <img src="images/phone.png" alt="phone" className="image-float img-fluid" />
+                <img src="images/phone.png" alt="phone" className={`${styles.imageFloat} img-fluid`} />
               </div>
               <div className="col-md-8">
                 <h2 className="my-5">Mobil uygulamamız ile daha hızlı alışveriş edin.</h2>

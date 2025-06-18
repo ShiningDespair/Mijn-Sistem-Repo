@@ -36,26 +36,26 @@ const NewArrivalsCarousel = () => {
             <div className="products-carousel swiper">
               <div className="swiper-wrapper">
 
-                <div className="product-item swiper-slide">
-                  <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                <div className={`${styles.productItem} swiper-slide`}>
+                  <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
                   <figure>
                     <a href="index.html" title="Product Title">
                       <img src="images/kirmizi-meri-elbise.png"  className="tab-image" />
                     </a>
                   </figure>
                   <h3>Kırmızı Meri Elbise</h3>
-                  <span className="qty">1 değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                  <span className="price">₺18.00</span>
+                  <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                  <span className={styles.price}>₺18.00</span>
                   <div className="d-flex align-items-center justify-content-between">
-                    <div className="input-group product-qty">
+                    <div className={`input-group ${styles.productQtyInputContainer}`}>
                         <span className="input-group-btn">
-                            <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                            <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
                               <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
                             </button>
                         </span>
-                        <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
+                        <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
                         <span className="input-group-btn">
-                            <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                            <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
                                 <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
                             </button>
                         </span>
@@ -64,26 +64,26 @@ const NewArrivalsCarousel = () => {
                   </div>
                 </div>
 
-                <div className="product-item swiper-slide">
-                  <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                <div className={`${styles.productItem} swiper-slide`}>
+                  <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
                   <figure>
                     <a href="index.html" title="Product Title">
                       <img src="images/firfirli-elbise.png"  className="tab-image" />
                     </a>
                   </figure>
                   <h3>Fıfırlı Siyah Elbise</h3>
-                  <span className="qty">1 değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                  <span className="price">₺18.00</span>
+                  <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                  <span className={styles.price}>₺18.00</span>
                   <div className="d-flex align-items-center justify-content-between">
-                    <div className="input-group product-qty">
+                    <div className={`input-group ${styles.productQtyInputContainer}`}>
                         <span className="input-group-btn">
-                            <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
+                            <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
                               <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
                             </button>
                         </span>
-                        <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
+                        <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
                         <span className="input-group-btn">
-                            <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
+                            <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
                                 <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
                             </button>
                         </span>
@@ -92,7 +92,7 @@ const NewArrivalsCarousel = () => {
                   </div>
                 </div>
 
-                {/* Add the rest of the product items here */}
+                {/* Add the rest of the product items here, applying the same className patterns from styles module */}
 
               </div>
             </div>

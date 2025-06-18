@@ -1,1 +1,21 @@
-/* Styles for SvgIcons component will be added here */
+/*
+The SvgIcons component (src/View/Components/SvgIcons/SvgIcons.jsx)
+is a container for SVG <symbol> definitions. It is not meant to be visibly styled itself;
+its main <svg> element has `display: none;`.
+
+The individual SVG icons defined here are styled when they are used
+elsewhere in the application via <svg><use xlink:href="#icon-id"></use></svg>,
+where the <svg> instance would receive appropriate classes for sizing, color, etc.
+
+No specific custom CSS rules unique to this definitional component were found
+in style.css.old, nor are they expected.
+
+This file is kept for structural consistency.
+*/
+
+.svgDefinitions {
+    /* This class would apply to the main <svg> element if it were visible */
+    /* For example:
+    display: none !important;
+    */
+}

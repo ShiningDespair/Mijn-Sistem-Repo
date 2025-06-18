@@ -1,4 +1,8 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -7,17 +11,21 @@ const Hero = () => {
       <div className="row">
         <div className="col-md-12">
 
-          <div className={styles.bannerBlocks}> {/* Updated */}
+          <div className={styles.bannerBlocks}>
 
-            <div className={`${styles.bannerAd} ${styles.large} bg-info ${styles.block1}`}> {/* Updated & combined */}
+            <div className={`${styles.bannerAd} ${styles.large} bg-info ${styles.block1}`}>
 
-              <div className={`${styles.mainSwiper} swiper`}> {/* Updated & combined */}
-                <div className="swiper-wrapper">
-
-                  <div className={`${styles.swiperSlide} swiper-slide`}> {/* Updated & combined */}
+              <Swiper
+                modules={[Pagination]}
+                pagination={{ clickable: true }}
+                speed={500}
+                loop={true} // Assuming loop is desired for hero banners
+                className={styles.mainSwiper} // Apply custom styles to Swiper container if needed
+              >
+                  <SwiperSlide className={styles.swiperSlide}>
                     <div className="row banner-content p-5">
                       <div className="content-wrapper col-md-7">
-                        <div className={`${styles.categories} my-3`}>Yeni Sezon</div> {/* Updated */}
+                        <div className={`${styles.categories} my-3`}>Yeni Sezon</div>
                         <h3 className="display-4">Abiye Elbise Modelleri</h3>
                         <p></p>
                         <a href="#" className="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Satın Al</a>
@@ -26,13 +34,13 @@ const Hero = () => {
                         <img src="images/cagla.png" className="img-fluid" />
                       </div>
                     </div>
-                  </div>
+                  </SwiperSlide>
 
-                  <div className={`${styles.swiperSlide} swiper-slide`}> {/* Updated & combined */}
+                  <SwiperSlide className={styles.swiperSlide}>
                     <div className="row banner-content p-5">
                       <div className="content-wrapper col-md-7">
-                        <div className={`${styles.categories} mb-3 pb-3`}>100% doğal</div> {/* Updated */}
-                        <h3 className={styles.bannerTitle}>Kaliteli ve Havadar Kumaş</h3> {/* Updated */}
+                        <div className={`${styles.categories} mb-3 pb-3`}>100% doğal</div>
+                        <h3 className={styles.bannerTitle}>Kaliteli ve Havadar Kumaş</h3>
                         <p>Bedeninizi rahatlatın.</p>
                         <a href="#" className="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Ürünleri Görüntüle</a>
                       </div>
@@ -40,13 +48,13 @@ const Hero = () => {
                         <img src="images/product-thumb-1.png" className="img-fluid" />
                       </div>
                     </div>
-                  </div>
+                  </SwiperSlide>
 
-                  <div className={`${styles.swiperSlide} swiper-slide`}> {/* Updated & combined */}
+                  <SwiperSlide className={styles.swiperSlide}>
                     <div className="row banner-content p-5">
                       <div className="content-wrapper col-md-7">
-                        <div className={`${styles.categories} mb-3 pb-3`}>İndirimi Kaçırma</div> {/* Updated */}
-                        <h3 className={styles.bannerTitle}>Abiyelerde Dev Kampanya</h3> {/* Updated */}
+                        <div className={`${styles.categories} mb-3 pb-3`}>İndirimi Kaçırma</div>
+                        <h3 className={styles.bannerTitle}>Abiyelerde Dev Kampanya</h3>
                         <p>Hemen gardolabını dizmeye başla!</p>
                         <a href="#" className="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Abiyelere Git</a>
                       </div>
@@ -54,15 +62,12 @@ const Hero = () => {
                         <img src="images/product-thumb-2.png" className="img-fluid" />
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className={`${styles.swiperPagination} swiper-pagination`}></div> {/* Updated & combined */}
-
-              </div>
+                  </SwiperSlide>
+                {/* The swiper-pagination div is no longer needed here, Swiper handles it */}
+              </Swiper>
             </div>
 
-            <div className={`${styles.bannerAd} bg-success-subtle ${styles.block2}`} style={{background:"url('images/banner-kare-1-bannerPic-8.jpg') no-repeat", backgroundPosition: "right bottom"}}> {/* Updated & combined */}
+            <div className={`${styles.bannerAd} bg-success-subtle ${styles.block2}`} style={{background:"url('images/banner-kare-1-bannerPic-8.jpg') no-repeat", backgroundPosition: "right bottom"}}>
               <div className="row banner-content p-5">
 
                 <div className="content-wrapper col-md-7">

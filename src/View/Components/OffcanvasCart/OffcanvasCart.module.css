@@ -1,1 +1,61 @@
-/* Styles for OffcanvasCart component will be added here */
+/* Styles for OffcanvasCart component */
+
+/*
+The OffcanvasCart component is primarily styled using Bootstrap's offcanvas classes
+and utility classes.
+The main custom styling needed is for the quantity input controls within cart items,
+to match the appearance of quantity controls on product cards.
+*/
+
+.productQtyInputContainer {
+  width: 85px;
+  /* Matches product item style */
+}
+
+.quantityInput {
+  height: auto;
+  width: 28px;
+  text-align: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  /* Matches product item style */
+}
+
+.btnNumber { /* For + and - buttons for quantity */
+  width: 26px;
+  height: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  border-radius: 6px;
+  color: #222;
+  padding: 0;
+  /* Matches product item style */
+}
+
+.btnNumber svg {
+  width: 1em;
+  height: 1em;
+}
+
+/* Example placeholder for other potential custom styles */
+.cartItem {
+  /* If list-group-item needed further specific styling */
+}
+
+.cartItemImage {
+  /* If the img tag for cart items needed specific styling */
+  max-width: 60px; /* Example */
+  height: auto;
+  margin-right: 15px;
+}
+
+.cartFooter {
+  /* If the footer area of the cart needed specific styling */
+}

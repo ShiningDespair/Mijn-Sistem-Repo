@@ -1,4 +1,8 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import styles from './PopularProductsCarousel.module.css';
 
 // Assuming IconifyIcon is a custom component you'll define or import
@@ -33,71 +37,82 @@ const PopularProductsCarousel = () => {
         <div className="row">
           <div className="col-md-12">
 
-            <div className="products-carousel swiper">
-              <div className="swiper-wrapper">
-
-                <div className="product-item swiper-slide">
-                  <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                  <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/kirmizi-meri-elbise.png"  className="tab-image" />
-                    </a>
-                  </figure>
-                  <h3>Kırmızı Meri Elbise</h3>
-                  <span className="qty">1 değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                  <span className="price">₺18.00</span>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div className="input-group product-qty">
-                        <span className="input-group-btn">
-                            <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
-                        <span className="input-group-btn">
-                            <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                    <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                nextEl: ".products-carousel-next", // Ensure these class names match the buttons in this instance
+                prevEl: ".products-carousel-prev", // Ensure these class names match the buttons in this instance
+              }}
+              spaceBetween={30}
+              speed={500}
+              loop={true}
+              slidesPerView={1} // Base for mobile (smallest breakpoint)
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+                991: { slidesPerView: 4 },
+                1500: { slidesPerView: 6 },
+              }}
+              // className="products-carousel" // Optional: if products-carousel class itself has styles
+            >
+              <SwiperSlide className={styles.productItem}>
+                <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                <figure>
+                  <a href="index.html" title="Product Title">
+                    <img src="images/kirmizi-meri-elbise.png"  className="tab-image" />
+                  </a>
+                </figure>
+                <h3>Kırmızı Meri Elbise</h3>
+                <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                <span className={styles.price}>₺18.00</span>
+                <div className="d-flex align-items-center justify-content-between">
+                  <div className={`input-group ${styles.productQtyInputContainer}`}>
+                      <span className="input-group-btn">
+                          <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
+                            <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
+                          </button>
+                      </span>
+                      <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
+                      <span className="input-group-btn">
+                          <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
+                              <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
+                          </button>
+                      </span>
                   </div>
+                  <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
                 </div>
+              </SwiperSlide>
 
-                <div className="product-item swiper-slide">
-                  <a href="#" className="btn-wishlist"><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                  <figure>
-                    <a href="index.html" title="Product Title">
-                      <img src="images/firfirli-elbise.png"  className="tab-image" />
-                    </a>
-                  </figure>
-                  <h3>Fıfırlı Siyah Elbise</h3>
-                  <span className="qty">1 değerlendirme</span><span className="rating"><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                  <span className="price">₺18.00</span>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div className="input-group product-qty">
-                        <span className="input-group-btn">
-                            <button type="button" className="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" className="form-control input-number" defaultValue="1" />
-                        <span className="input-group-btn">
-                            <button type="button" className="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                    <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
+              <SwiperSlide className={styles.productItem}>
+                <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
+                <figure>
+                  <a href="index.html" title="Product Title">
+                    <img src="images/firfirli-elbise.png"  className="tab-image" />
+                  </a>
+                </figure>
+                <h3>Fıfırlı Siyah Elbise</h3>
+                <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
+                <span className={styles.price}>₺18.00</span>
+                <div className="d-flex align-items-center justify-content-between">
+                  <div className={`input-group ${styles.productQtyInputContainer}`}>
+                      <span className="input-group-btn">
+                          <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
+                            <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
+                          </button>
+                      </span>
+                      <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
+                      <span className="input-group-btn">
+                          <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
+                              <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
+                          </button>
+                      </span>
                   </div>
+                  <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
                 </div>
+              </SwiperSlide>
 
-                {/* Add the rest of the product items here */}
-
-              </div>
-            </div>
-            {/* / products-carousel */}
-
+              {/* Add the rest of the product items here, applying the same className patterns from styles module */}
+            </Swiper>
           </div>
         </div>
       </div>

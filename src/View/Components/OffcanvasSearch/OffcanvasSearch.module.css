@@ -1,1 +1,25 @@
-/* Styles for OffcanvasSearch component will be added here */
+/*
+The Offcanvas Search component (src/View/Components/OffcanvasSearch/OffcanvasSearch.jsx)
+is primarily styled using Bootstrap's offcanvas classes, form control classes,
+button classes, and utility classes.
+
+No specific custom CSS rules unique to this component's structure were found
+in style.css.old that would require being extracted into this module.
+Global overrides for forms and buttons would apply.
+
+This file is kept for structural consistency. If component-specific styles
+are needed in the future (e.g., for search results listing if added),
+they can be added here.
+*/
+
+.searchForm {
+    /* Example: If the form element itself needed specific styling */
+}
+
+.searchInput {
+    /* Example: If the input.form-control needed further customization beyond global */
+}
+
+.searchButton {
+    /* Example: If the button.btn.btn-primary needed further customization */
+}
