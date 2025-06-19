@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react'; // Removed useState as it's now in ProductItem
 import styles from './TrendingProducts.module.css';
+import ProductItem from '../ProductItem/ProductItem.jsx';
 
 // Assuming IconifyIcon is a custom component you'll define or import
 // For now, we'll render it as a span or div if it's not available.
@@ -8,7 +9,31 @@ import styles from './TrendingProducts.module.css';
 
 const TrendingProducts = () => {
   // Placeholder for IconifyIcon if not available
-  const IconifyIcon = (props) => <span {...props}></span>;
+  const IconifyIcon = (props) => <span {...props}></span>; // Kept for the "Sepete Ekle" link, ProductItem handles its own.
+
+  const trendingProductsData = [
+    {
+      id: 'tp1',
+      imageUrl: 'images/crop-to-fit.jpeg',
+      productName: 'Krem Oversize Takım',
+      ratingCountText: '27 Değerlendirme',
+      ratingValueText: '4.5',
+      priceText: 'TL2000',
+      badgeText: '-30%',
+      productUrl: 'index.html' // Example URL
+    },
+    {
+      id: 'tp2',
+      imageUrl: 'images/crop-to-fit (1).jpeg',
+      productName: 'Kırmızı Meri Elbise',
+      ratingCountText: '34 Değerlendirme',
+      ratingValueText: '4.5',
+      priceText: 'TL1500',
+      badgeText: '-30%',
+      productUrl: 'index.html' // Example URL
+    },
+    // Add more product data objects here if there were more static items
+  ];
 
   return (
     <section className="py-5">
@@ -32,96 +57,36 @@ const TrendingProducts = () => {
                 <div className="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
 
                   <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
-                    <div className="col">
-                      <div className={styles.productItem}>
-                        <span className="badge bg-success position-absolute m-3">-30%</span>
-                        <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                        <figure>
-                          <a href="index.html" title="Product Title">
-                            <img src="images/crop-to-fit.jpeg"  className="tab-image" />
-                          </a>
-                        </figure>
-                        <h3>Krem Oversize Takım</h3>
-                        <span className={styles.qty}>27 Değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                        <span className={styles.price}>TL2000</span>
-                        <div className="d-flex align-items-center justify-content-between">
-                          <div className={`input-group ${styles.productQtyInputContainer}`}>
-                              <span className="input-group-btn">
-                                  <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
-                                    <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                                  </button>
-                              </span>
-                              <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
-                              <span className="input-group-btn">
-                                  <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
-                                      <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                                  </button>
-                              </span>
-                          </div>
-                          <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
-                        </div>
+                    {trendingProductsData.map(product => (
+                      <div className="col" key={product.id}>
+                        <ProductItem
+                          imageUrl={product.imageUrl}
+                          productName={product.productName}
+                          badgeText={product.badgeText}
+                          ratingCountText={product.ratingCountText}
+                          ratingValueText={product.ratingValueText}
+                          priceText={product.priceText}
+                          productUrl={product.productUrl}
+                          // initialQuantity={1} // ProductItem defaults to 1
+                        />
                       </div>
-                    </div>
-
-                    <div className="col">
-                      <div className={styles.productItem}>
-                        <span className="badge bg-success position-absolute m-3">-30%</span>
-                        <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                        <figure>
-                          <a href="index.html" title="Product Title">
-                            <img src="images/crop-to-fit (1).jpeg"  className="tab-image" />
-                          </a>
-                        </figure>
-                        <h3>Kırmızı Meri Elbise</h3>
-                        <span className={styles.qty}>34 Değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                        <span className={styles.price}>TL1500</span>
-                        <div className="d-flex align-items-center justify-content-between">
-                          <div className={`input-group ${styles.productQtyInputContainer}`}>
-                              <span className="input-group-btn">
-                                  <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
-                                    <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                                  </button>
-                              </span>
-                              <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
-                              <span className="input-group-btn">
-                                  <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
-                                      <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                                  </button>
-                              </span>
-                          </div>
-                          <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Add the rest of the product items here, ensuring to replace class with className and handle iconify-icon elements, applying styles.productItem, styles.btnWishlist, styles.qty, styles.rating, styles.price, styles.productQtyInputContainer, styles.btnNumber, and styles.quantityInput as shown above. */}
-
+                    ))}
                   </div>
                   {/* / product-grid */}
 
                 </div>
 
                 <div className="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
-
                   <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
-                   {/* Product items for Abiye category */}
-
+                   {/* Product items for Abiye category - map a filtered list or different data source here */}
+                   <p className="text-center p-5">Abiye ürünleri bu sekmede gösterilecektir.</p>
                   </div>
-                  {/* / product-grid */}
-
                 </div>
                 <div className="tab-pane fade" id="nav-juices" role="tabpanel" aria-labelledby="nav-juices-tab">
-
                   <div className="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-
-                    {/* Product items for Takım category */}
-
+                    {/* Product items for Takım category - map a filtered list or different data source here */}
+                    <p className="text-center p-5">Takım ürünleri bu sekmede gösterilecektir.</p>
                   </div>
-                  {/* / product-grid */}
-
-                </div>
 
               </div>
             </div>

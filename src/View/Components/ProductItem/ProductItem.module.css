@@ -1,0 +1,161 @@
+/* Styles for a single ProductItem component */
+
+.productItem {
+  position: relative;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #FBFBFB;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  margin-bottom: 30px; /* This might be handled by parent grid/carousel context */
+  transition: box-shadow 0.3s ease-out;
+  display: flex; /* Added to help structure content if needed */
+  flex-direction: column; /* Added to stack elements vertically */
+  height: 100%; /* Added to ensure items in a row have same height if parent is a flex row */
+}
+
+.productItem:hover {
+  box-shadow: 0px 21px 44px rgba(0, 0, 0, 0.08);
+}
+
+/* Applies to h3 tags directly within productItem, or a h3 with a specific class if preferred */
+.productItem h3 {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px; /* Consider making this configurable via prop or theme */
+  line-height: 25px;
+  text-transform: capitalize;
+  color: #333333;
+  margin: 0 0 0.5rem 0; /* Added some bottom margin */
+}
+
+.productItem figure {
+  background: #F9F9F9;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0; /* Prevent figure from shrinking if content below is too large */
+}
+
+.productItem figure img {
+  max-height: 210px;
+  height: auto;
+  width: auto; /* Ensure image scales correctly */
+  max-width: 100%;
+}
+
+.btnWishlist {
+  position: absolute;
+  top: 15px; /* Adjusted slightly from 20px */
+  right: 15px; /* Adjusted slightly from 20px */
+  width: 40px; /* Adjusted slightly from 50px */
+  height: 40px; /* Adjusted slightly from 50px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  transition: all 0.3s ease-out;
+  color: #222;
+  z-index: 2; /* Ensure it's above other elements like badges */
+}
+
+.btnWishlist:hover {
+  background: rgb(240, 56, 56);
+  color: #fff;
+  border-color: rgb(240,56,56);
+}
+
+.productDetails {
+  /* Optional wrapper for text content below image */
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow text content to take available space */
+}
+
+.qty {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #9D9D9D;
+  display: block; /* Ensure it takes its own line or adjust as needed */
+  margin-bottom: 0.25rem;
+}
+
+.rating {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #222222;
+  display: block; /* Ensure it takes its own line or adjust as needed */
+  margin-bottom: 0.5rem;
+}
+
+.rating svg { /* Style for the star icon if it's an SVG directly in .rating */
+    vertical-align: middle;
+}
+
+.price {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 22px; /* Consider making this configurable */
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #222222;
+  margin-bottom: 1rem;
+}
+
+.productActions {
+  /* Wrapper for quantity and add-to-cart button, ensures it's at the bottom */
+  margin-top: auto; /* Pushes to the bottom if .productItem is flex column */
+}
+
+.productQtyInputContainer {
+  width: 100px; /* Increased width slightly for better touch targets */
+  display: flex;
+}
+
+.quantityInput {
+  height: auto; /* Rely on Bootstrap's form-control sizing */
+  min-height: 38px; /* Ensure it matches button height */
+  text-align: center;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 0.375rem 0.25rem; /* Adjust padding */
+  flex-grow: 1;
+  /* Bootstrap's form-control class will provide most styling */
+}
+
+.btnNumber {
+  width: 38px; /* Standard Bootstrap button padding will make it wider */
+  height: 38px; /* Standard Bootstrap button padding will make it taller */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Using Bootstrap button classes in JSX is preferred for base styling */
+  /* These are overrides if Bootstrap classes are not fully sufficient */
+  /* background: #FFFFFF; */
+  /* border: 1px solid #E2E2E2; */
+  /* border-radius: 6px; */
+  /* color: #222; */
+  padding: 0.375rem 0.5rem; /* Adjust padding */
+}
+
+.btnNumber svg {
+  width: 1em;
+  height: 1em;
+}
+
+/* Badge styling if needed, though Bootstrap .badge is typically used */
+.badge {
+    /* position: absolute; */
+    /* top: 15px; */
+    /* left: 15px; */
+    /* z-index: 1; */
+}

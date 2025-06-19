@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import styles from './BestSellersCarousel.module.css';
+import styles from './BestSellersCarousel.module.css'; // Retain for any carousel specific styles if added later
+import ProductItem from '../ProductItem/ProductItem.jsx';
 
 // Assuming IconifyIcon is a custom component you'll define or import
 // For now, we'll render it as a span or div if it's not available.
@@ -11,7 +12,31 @@ import styles from './BestSellersCarousel.module.css';
 
 const BestSellersCarousel = () => {
   // Placeholder for IconifyIcon if not available
-  const IconifyIcon = (props) => <span {...props}></span>;
+  // const IconifyIcon = (props) => <span {...props}></span>; // ProductItem will handle its own IconifyIcon
+
+  const bestSellersData = [
+    {
+      id: 'bs1',
+      imageUrl: 'images/kirmizi-meri-elbise.png',
+      productName: 'Kırmızı Meri Elbise',
+      ratingCountText: '1 değerlendirme',
+      ratingValueText: '4.5',
+      priceText: '₺18.00',
+      badgeText: '-15%',
+      productUrl: 'index.html'
+    },
+    {
+      id: 'bs2',
+      imageUrl: 'images/firfirli-elbise.png',
+      productName: 'Fıfırlı Siyah Elbise',
+      ratingCountText: '1 değerlendirme',
+      ratingValueText: '4.5',
+      priceText: '₺18.00',
+      badgeText: '-15%',
+      productUrl: 'index.html'
+    },
+    // Add more product data objects here if there were more static items
+  ];
 
   return (
     <section className="py-5 overflow-hidden">
@@ -55,65 +80,21 @@ const BestSellersCarousel = () => {
               }}
               // className="products-carousel" // Optional: if products-carousel class itself has styles
             >
-              <SwiperSlide className={styles.productItem}>
-                <span className="badge bg-success position-absolute m-3">-15%</span>
-                <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                <figure>
-                  <a href="index.html" title="Product Title">
-                    <img src="images/kirmizi-meri-elbise.png"  className="tab-image" />
-                  </a>
-                </figure>
-                <h3>Kırmızı Meri Elbise</h3>
-                <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                <span className={styles.price}>₺18.00</span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <div className={`input-group ${styles.productQtyInputContainer}`}>
-                      <span className="input-group-btn">
-                          <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
-                            <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                          </button>
-                      </span>
-                      <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
-                      <span className="input-group-btn">
-                          <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
-                              <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                          </button>
-                      </span>
-                  </div>
-                  <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide className={styles.productItem}>
-                <span className="badge bg-success position-absolute m-3">-15%</span>
-                <a href="#" className={styles.btnWishlist}><svg width="24" height="24"><use xlinkHref="#heart"></use></svg></a>
-                <figure>
-                  <a href="index.html" title="Product Title">
-                    <img src="images/firfirli-elbise.png"  className="tab-image" />
-                  </a>
-                </figure>
-                <h3>Fıfırlı Siyah Elbise</h3>
-                <span className={styles.qty}>1 değerlendirme</span><span className={styles.rating}><svg width="24" height="24" className="text-primary"><use xlinkHref="#star-solid"></use></svg> 4.5</span>
-                <span className={styles.price}>₺18.00</span>
-                <div className="d-flex align-items-center justify-content-between">
-                  <div className={`input-group ${styles.productQtyInputContainer}`}>
-                      <span className="input-group-btn">
-                          <button type="button" className={`quantity-left-minus btn btn-danger ${styles.btnNumber}`} data-type="minus">
-                            <svg width="16" height="16"><use xlinkHref="#minus"></use></svg>
-                          </button>
-                      </span>
-                      <input type="text" name="quantity" className={`form-control input-number ${styles.quantityInput}`} defaultValue="1" />
-                      <span className="input-group-btn">
-                          <button type="button" className={`quantity-right-plus btn btn-success ${styles.btnNumber}`} data-type="plus">
-                              <svg width="16" height="16"><use xlinkHref="#plus"></use></svg>
-                          </button>
-                      </span>
-                  </div>
-                  <a href="#" className="nav-link">Sepete Ekle <IconifyIcon icon="uil:shopping-cart" /></a>
-                </div>
-              </SwiperSlide>
-
-              {/* Add the rest of the product items here, applying the same className patterns from styles module */}
+              {bestSellersData.map(product => (
+                <SwiperSlide key={product.id}>
+                  {/* ProductItem will apply its own styles.productItem class from its module */}
+                  <ProductItem
+                    imageUrl={product.imageUrl}
+                    productName={product.productName}
+                    badgeText={product.badgeText}
+                    ratingCountText={product.ratingCountText}
+                    ratingValueText={product.ratingValueText}
+                    priceText={product.priceText}
+                    productUrl={product.productUrl}
+                    // initialQuantity={1} // ProductItem defaults to 1
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

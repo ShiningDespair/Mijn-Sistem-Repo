@@ -1,0 +1,15 @@
+/* Styles for InstagramGallery component */
+
+.galleryItem {
+  /* If individual items needed specific styling beyond Bootstrap grid columns */
+  /* For example, a hover effect container, but zoom-effect was on image-holder in blog */
+  /* The image-link class is primarily for JS lightbox functionality, not CSS layout here. */
+  padding: 0; /* To counteract any default padding if g-0 is not used on parent row */
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%; /* Make image fill the container if using object-fit */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  display: block;
+}

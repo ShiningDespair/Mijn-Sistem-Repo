@@ -1,0 +1,49 @@
+/* Styles for QuotationSection component */
+
+.quotationSection {
+  /* For the main section#quotation tag if needed, Bootstrap py-5 is on it */
+}
+
+.parallaxContainer {
+  /* This will replace .jarallax and .jarallax-keep-img for CSS module purposes */
+  /* The actual parallax effect requires a JS library. These are base styles. */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Often needed for parallax internals or overlays */
+}
+
+.bannerContent {
+  /* Corresponds to the original .banner-content div */
+  /* py-5 is already on it via Bootstrap class */
+  position: relative; /* To ensure content is above any pseudo-elements or parallax layers */
+  z-index: 1;
+}
+
+.quoteTitle {
+  /* For h2.display-2.text-white.text-uppercase.text-center */
+  /* Most styling comes from Bootstrap utilities. Add custom overrides if needed. */
+  /* Example: specific font-family or letter-spacing if different from global */
+  font-weight: 700; /* Ensure it's bold, though display-2 is already bold */
+}
+
+.quoteText {
+  /* For p.text-white.fs-4.text-center */
+  /* Bootstrap utilities handle most of this. */
+}
+
+.itemPrice {
+  /* For div.item-price.text-center */
+  margin-top: 1.5rem; /* Add some space above the price */
+}
+
+.originalPrice {
+  /* For del.text-white.fs-2.fw-bold */
+  /* Bootstrap utilities handle most of this. */
+  opacity: 0.7; /* Make the original price slightly less prominent */
+  margin-right: 0.5rem;
+}
+
+.discountedPrice {
+  /* For span.text-white.fs-1.fw-bold */
+  /* Bootstrap utilities handle most of this. */
+}
