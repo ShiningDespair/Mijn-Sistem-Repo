@@ -87,6 +87,7 @@ const TrendingProducts = () => {
                     {/* Product items for Takım category - map a filtered list or different data source here */}
                     <p className="text-center p-5">Takım ürünleri bu sekmede gösterilecektir.</p>
                   </div>
+                </div>
 
               </div>
             </div>
